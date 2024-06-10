@@ -1,12 +1,21 @@
 #include <mlx.h>
+#include "./libft/src/libft.h"
 
-int	main()
+void	*convert_map(void)
 {
-	void	*mlx_connection;
-	void	*mlx_window;
+	int	fd;
+	char	*line;
 
-	mlx_connection = mlx_init();
-	mlx_window = mlx_new_window(mlx_connection, 500, 500, "My first window");
-	mlx_loop(mlx_connection);
+	fd = open("line.fdf", O_RDONLY);
+	line = get_next_line(fd);
+	close(fd);
+	printf("%s", line);
+	//free(line);
+	return (line);
+}
+
+int	main(void)
+{
+	convert_map();
 }
 
