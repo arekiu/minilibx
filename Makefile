@@ -36,4 +36,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+valgrind: $(NAME)
+	valgrind -s --leak-check=full --track-origins=yes ./$(NAME) line.fdf
+
+.PHONY: all clean fclean re valgrind
