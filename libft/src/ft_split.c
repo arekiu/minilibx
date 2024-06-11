@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:46:17 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/05/03 10:40:24 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:47:50 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,19 +86,3 @@ char	**ft_split(char const *str, char c)
 	str_arr[a] = NULL;
 	return (str_arr);
 }
-/*
-int     main(void)
-{
-	int	i = 0;
-    char *str = "ho li ";
-    char    c = ' ';
-
-    char **arr_words = ft_split(str,c);
-
-	while (arr_words[i] != NULL)
-	{
-		printf("word: %s\n", arr_words[i]);
-		i++;
-	}
-    return (0);
-}*/

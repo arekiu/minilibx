@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aschmidt <aschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: aschmidt <aschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:01:39 by aschmidt          #+#    #+#             */
-/*   Updated: 2024/04/30 14:05:17 by aschmidt         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:54:12 by aschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,20 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
+
+int		ft_printf(const char *fmt_str, ...);
+int		formater(char format, va_list args);
+int		print_p(va_list args);
+int		print_u(va_list args);
+int		print_per(void);
+int		print_str(va_list args);
+int		print_c(va_list args);
+int		print_d(va_list args);
+int		print_x(va_list args, char format);
+void	ft_putunsig(unsigned int n);
+int		unsig_num_len(unsigned int n);
+int		ft_put_hexa(unsigned int n, char format);
+int		ft_put_point(uintptr_t n);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1

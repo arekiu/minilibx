@@ -1,8 +1,8 @@
-NAME	=	fdf.a
+NAME		=	fdf.a
 
-SRC		=	example.c
+SRC			=	$(addprefix src/, main.c parse_map.c)
 
-OBJ = $(SRC:.c=.o)
+OBJ			= $(SRC:.c=.o)
 
 LIBFT_PATH	= libft/
 
@@ -16,13 +16,15 @@ RM 			=	rm -f
 
 CFLAGS		=	-Wall -Wextra -Werror
 
+MLX_FLAGS	=	-Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11 -lm
+
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_PATH)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJ) $(MLX_FLAGS) -o $(NAME) $(LIBFT)
 
 clean:
 	@$(MAKE) -C $(LIBFT_PATH) clean
